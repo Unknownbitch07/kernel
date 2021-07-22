@@ -49,11 +49,4 @@ function compile() {
     fi
     cp $DTB_T $REPACK_DIR/dtb-treble/
 }
-# Zipping
-function zipping() {
-    cd $REPACK_DIR || exit 1
-    zip -r9 Lightning_Kernel-${TANGGAL}.zip *
-    curl --upload-file ./Lightning_Kernel-${TANGGAL}.zip https://transfer.sh/Lightning_Kernel-${TANGGAL}.zip
-}
 compile
-zipping
